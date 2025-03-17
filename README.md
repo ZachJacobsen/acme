@@ -1,43 +1,32 @@
-# Acme.sh Automation Script
+# install_acme.sh: Automated SSL Management with Pac-Man Animation 🎮🍒👾
 
-This script automates the installation and setup of acme.sh to issue and deploy SSL certificates using Let's Encrypt for specified domains. It includes setting the default Certificate Authority (CA) to Let's Encrypt and deploying the certificates via cPanel UAPI.
+## Overview
+`install_acme.sh` is a fun and functional script for automating SSL certificate management for domains hosted on cPanel. It uses the robust `acme.sh` tool to handle SSL certificate issuance, deployment, and automatic renewal with Let's Encrypt. To make it enjoyable, the script features **Pac-Man-inspired animations**, ensuring your tasks are both productive and entertaining!
 
-## Prerequisites
+---
 
-- A Unix-based operating system (e.g., Linux, macOS)
-- Bash shell
-- cPanel with UAPI access
-- Internet connection
+## Features
+- **Initial Setup**: Install and configure `acme.sh` with Let's Encrypt as the default Certificate Authority.
+- **Issue and Deploy Certificates**: Automatically manage SSL certificates for your main domain and `www` subdomain, deploying them seamlessly through cPanel UAPI.
+- **Automatic Renewal**: Sets up a `crontab` job to ensure SSL certificates are renewed and redeployed without any manual effort.
+- **Interactive Interface**: Offers a menu-based selection between setup and deployment options.
+- **Dynamic Animations**: Pac-Man-style animations guide you through the script's steps, adding a fun visual element to the process.
 
-## Usage
+---
 
-1. Clone or download this repository to your local machine.
-2. Navigate to the directory where `install_acme.sh` is located.
-3. Make the script executable:
-    ```bash
-    chmod +x install_acme.sh
-    ```
-4. Run the script:
-    ```bash
-    ./install_acme.sh
-    ```
+## Requirements
+- A server with cPanel hosting.
+- User permissions to install tools and configure cron jobs.
+- `curl` installed on the system.
 
-## Script Details
+---
 
-The script performs the following steps:
+## Installation and Usage
 
-1. Prompts the user for the domain and directory where the domain is located.
-2. Installs `acme.sh` from the official source.
-3. Sources the `.bashrc` file to refresh the terminal session.
-4. Sets the default CA to Let's Encrypt.
-5. Issues SSL certificates for the provided domain and its www subdomain.
-6. Deploys the certificates using cPanel UAPI.
-7. Sets up a cron job to automatically renew the certificates.
+1. **Download the Script**
+   Save the script to your server with the name `install_acme.sh`.
 
-## Cron Job
-
-A cron job is automatically set up to renew the certificates. The cron job runs daily at 00:44. You can view or edit the cron job by running:
-
-```bash
-crontab -e
-
+2. **Make the Script Executable**
+   Run the following command to make it executable:
+   ```bash
+   chmod +x install_acme.sh
